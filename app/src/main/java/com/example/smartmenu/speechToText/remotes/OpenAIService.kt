@@ -1,6 +1,5 @@
-package com.example.smartmenu.openai
+package com.example.smartmenu.speechToText.remotes
 
-import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.POST
 

@@ -1,4 +1,4 @@
-package com.example.smartmenu.openai
+package com.example.smartmenu.speechToText.remotes
 
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object OpenAIClient {
     private const val BASE_URL = "https://api.openai.com/v1/"
-    private const val API_KEY = "" // حط هنا مفتاحك
+    private const val API_KEY = "Bearer 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" // حط هنا مفتاحك
 
     // Logging عشان نقدر نشوف طلبات الـ API في Logcat
     private val logging = HttpLoggingInterceptor().apply {

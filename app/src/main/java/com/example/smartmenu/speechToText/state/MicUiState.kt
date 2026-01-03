@@ -1,8 +1,9 @@
-package com.example.smartmenu.speechToText
+package com.example.smartmenu.speechToText.state
 
 import androidx.compose.runtime.mutableStateOf
 
 object MicUiState {
     val micState = mutableStateOf(MicState.IDLE)
     val text = mutableStateOf("اضغط على الميكروفون وابدأ الكلام")
+    val isFinalResult = mutableStateOf(false)
 }

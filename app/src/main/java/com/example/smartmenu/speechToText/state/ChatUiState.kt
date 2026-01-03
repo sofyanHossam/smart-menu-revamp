@@ -1,4 +1,4 @@
-package com.example.smartmenu.openai
+package com.example.smartmenu.speechToText.state
 
 sealed class ChatUiState {
     object Idle : ChatUiState()

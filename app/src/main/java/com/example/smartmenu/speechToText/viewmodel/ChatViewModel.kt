@@ -1,7 +1,12 @@
-package com.example.smartmenu.openai
+package com.example.smartmenu.speechToText.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.smartmenu.speechToText.remotes.ChatRequest
+import com.example.smartmenu.speechToText.remotes.Message
+import com.example.smartmenu.speechToText.remotes.OpenAIClient
+import com.example.smartmenu.speechToText.remotes.OpenAIService
+import com.example.smartmenu.speechToText.state.ChatUiState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch

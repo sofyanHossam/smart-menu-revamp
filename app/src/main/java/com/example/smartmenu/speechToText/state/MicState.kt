@@ -1,4 +1,4 @@
-package com.example.smartmenu.speechToText
+package com.example.smartmenu.speechToText.state
 
 enum class MicState {
     IDLE,

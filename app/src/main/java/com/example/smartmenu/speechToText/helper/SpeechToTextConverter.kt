@@ -1,4 +1,4 @@
-package com.example.smartmenu.speechToText
+package com.example.smartmenu.speechToText.helper
 
 import android.Manifest
 import android.content.Context
@@ -10,8 +10,9 @@ import android.speech.RecognizerIntent
 import android.speech.SpeechRecognizer
 import android.util.Log
 import androidx.core.app.ActivityCompat
+import com.example.smartmenu.speechToText.contract.OnRecognitionListener
 
-class SpeechToTextConverter(private val context: Context,private val onRecognitionListener: OnRecognitionListener) {
+class SpeechToTextConverter(private val context: Context, private val onRecognitionListener: OnRecognitionListener) {
     private val TAG_RECOGNITION = "SpeechRecognitionTag"
     private val speechRecognizer: SpeechRecognizer =
         SpeechRecognizer.createSpeechRecognizer(context)
