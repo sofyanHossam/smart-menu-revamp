@@ -3,11 +3,13 @@ package com.example.smartmenu.speechToText
 import android.Manifest
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.example.smartmenu.similarity.SmartTextMatcher
 import com.example.smartmenu.speechToText.contract.OnRecognitionListener
 import com.example.smartmenu.speechToText.helper.SpeechToTextConverter
 import com.example.smartmenu.speechToText.screen.VoiceChatScreen
@@ -25,6 +27,38 @@ class SpeechToTextActivity : ComponentActivity(), OnRecognitionListener {
 
         speechToTextConverter = SpeechToTextConverter(this, this)
         requestAudioPermission()
+
+        val matcher = SmartTextMatcher()
+        val userInputs = listOf(
+            "شرما فراخ",
+            "فول",
+            "بطاطس"
+        )
+
+        val menuItems = listOf(
+            "شاورما فراخ",
+            "شاورما لحمة",
+            "فول مدمس",
+            "بطاطس محمرة",
+            "برجر فراخ"
+        )
+
+        val result = matcher.match(userInputs, menuItems)
+
+        result.forEach { (userInput, matches) ->
+            Log.d("SmartMatcher", "User Input: $userInput")
+
+            if (matches.isEmpty()) {
+                Log.d("SmartMatcher", "  ❌ No matches found")
+            } else {
+                matches.forEachIndexed { index, match ->
+                    Log.d(
+                        "SmartMatcher",
+                        "  ${index + 1}) ${match.menuItem}  → score = ${"%.2f".format(match.score)}"
+                    )
+                }
+            }
+        }
 
         setContent {
             VoiceChatScreen(

@@ -15,25 +15,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartMenu">
         <activity
-            android:name=".openai.OpenaiActivity"
+            android:name=".imageToText.ImageToTextActivity"
             android:exported="true" >
-
-        </activity>
-        <activity
-            android:name=".speechToText.SpeechToTextActivity"
-            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".speechToText.SpeechToTextActivity"
+            android:exported="true">
 
         </activity>
         <activity
             android:name=".curlpage.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.SmartMenu"></activity>
+            android:theme="@style/Theme.SmartMenu" />
     </application>
 
 </manifest>
